@@ -1,0 +1,176 @@
+.catalog-header {
+   width: 100%;
+   height: 30px;
+   display: flex;
+   align-items: baseline;
+   justify-content: space-between;
+}
+
+.catalog-header-other {
+   display: flex;
+   align-items: baseline;
+}
+.catalog-header h1 {
+   font-size: 22px;
+   font-weight: 800;
+   text-transform: uppercase;
+   margin-right: 9px;
+}
+
+.catalog-header h2 {
+   font-size: 13px;
+   text-transform: uppercase;
+   font-weight: 800;
+   color: #808080;
+}
+
+.catalog-header a:hover {
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+.catalog-header h3 {
+   font-weight: 400;
+   font-size: 13px;
+   color: #808080;
+}
+
+.catalog-header img {
+   width: 13px;
+   height: 13px;
+   margin-left: 4px;
+}
+
+.side-bar {
+ width: 140px;
+ margin-right: 20px;
+}
+
+.side-bar-section {
+   width: 100%;
+   margin-top: 15px;
+}
+
+.side-bar-section h2 {
+   font-size: 18px;
+   font-weight: 900;
+   text-transform: uppercase;
+   margin-bottom: 11px;
+}
+.side-bar-section li {
+   font-size: 13px;
+   font-weight: 450;
+   margin-top: 6px;
+}
+
+.side-bar-section a:hover {
+   color: #f39;
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+.bar-side-bar {
+   border-top: 4px;
+   border-style: solid;
+   border-color: #CCC;
+   padding-top: 15px;
+}
+
+.flexed {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.flexed li {
+   width: 25%;
+   font-size: 14px;
+   margin-top: 9px;
+}
+
+.stuff {
+   margin-top: 11px;
+}
+
+.blacks {
+   background-color: #000;
+
+}
+
+.grays{
+   background-color: #C1C1C1;
+}
+
+.cremes{
+   background-color: #EDEBD6;
+}
+.whites{
+   background-color: #F5F5F5;
+}
+.blues{
+   background-color: #3C89C8;
+}
+.purples{
+   background-color: #662D90;
+}
+.reds{
+   background-color: #CC242A;
+}
+.greens{
+   background-color: #048844;
+}
+.browns{
+   background-color: #885533;
+}
+.oranges{
+   background-color: #FF7722;
+}
+.yellows{
+   background-color:#FAEF2F;
+}
+
+.multicolors {
+   background: linear-gradient(to bottom, red,orange,yellow,green,blue,indigo,violet);
+}
+
+.boxed div {
+   width: 26px;
+   height: 18px;
+   margin-right: 5px;
+   margin-bottom: 5px;
+}
+
+.body-catalog {
+   display: flex;
+}
+
+.products {
+   margin-left: 18px;
+   height: 100%;
+   margin-top: 15px;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+
+.product-dir {
+   width: 195px;
+   height: 400px;
+}
+
+.product-picture {
+   width: 195px;
+   height: 300px;
+   object-fit: cover;
+}
+
+.catalog-product-text h2 {
+   text-transform: capitalize;;
+   font-weight: 500;
+   font-size: 13px;
+   margin-top: 6px;
+}
+
+.catalog-product-text a:hover {
+   text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+<div class="item-module">
+   <div class="split">
+      <div>
+         <h2><span class="pink">{{item.price | currency}}</span> {{item.type}}</h2>
+      </div>
+      <div class="arrow" ng-class="{'arrow-turn': item.show === true}"></div>
+   </div>
+   <div class="modular" ng-class="{'modular-show': item.show === true}">
+      <div class="sizes">
+         <div class="size-box" ng-class="{'highligted': size === 's'}" ng-click="sizeSelected('s')">S</div>
+         <div class="size-box" ng-class="{'highligted': size === 'm'}" ng-click="sizeSelected('m')">M</div>
+         <div class="size-box" ng-class="{'highligted': size === 'l'}" ng-click="sizeSelected('l')">L</div>
+         <div class="size-box" ng-class="{'highligted': size === 'xl'}" ng-click="sizeSelected('xl')">XL</div>
+         <div class="size-box" ng-class="{'highligted': size === 'xxl'}" ng-click="sizeSelected('xxl')">XXL</div>
+      </div>
+      <h3>
+         This item comes with the Threadless Happiness Guarantee
+      </h3>
+      <div class="add-to-cart" ng-click="test()">
+         add to cart
+      </div>
+   </div>

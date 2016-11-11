@@ -1,0 +1,37 @@
+<img src="https://cdn-images.threadless.com/threadless-media/navigation/sitewide8.jpg?q=85" alt="Free Shipping" class="promo-banner" />
+
+<div class="artist-bar">
+   <h1>{{product.name}}</h1>
+   <h2>{{product.artist}}</h2>
+</div>
+
+<div class="genders">
+   <a ui-sref="product({gender: 'male'})"><div class="genders-box" ng-class="{'genders-box-active': focus === 'male'}" >
+      Men
+   </div></a>
+   <a ui-sref="product({gender: 'female'})"><div class="genders-box" ng-class="{'genders-box-active': focus === 'female'}" >
+      Women
+   </div></a>
+</div>
+   <div class="black-bar-thick"></div>
+
+<div class="bulk">
+
+   <div class="product_image">
+      <main>
+      <img class="img-main" src="{{mainImage}}" alt="" />
+      </main>
+      <div class="thumbnails">
+         <div class="thumbnails-repeater" ng-repeat="product in images">
+            <img src="{{product.img}}" alt="{{product.img}}" ng-click="updateMain(product)" ng-class="{'thumbnails-repeater-border': mainImage === product.img}"/>
+         </div>
+      </div>
+   </div>
+   <div class="column">
+      <div ng-repeat="product in purchasable">
+         <cart-module item=product></cart-module>
+         </div>
+      </div>
+
+   </div>
+</div>

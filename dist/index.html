@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+    <head>
+        <meta charset="utf-8">
+        <title>Clone</title>
+        <link rel="stylesheet" href="bundle.css" media="screen" title="no title">
+        <link rel="shortcut icon" href="http://www.iconarchive.com/download/i65337/custom-icon-design/pretty-office-10/Pencil.ico"/>
+    </head>
+    <body ng-controller="mainCtrl">
+
+      <div class="banner">
+            <div class="banner-nav-bar">
+               <a ui-sref="home">
+                <img class="banner-img" src="./images/threadless_black.png" alt="idk"/>
+                </a>
+                <div>
+                    <ol class="nav-options-one">
+                        <li class="dropdown">
+                            <a class="shop-section" ui-sref="shop">SHOP</a>
+                            <ul class="dropdown-content shop">
+                                <div class="list">
+                                    <span class="dropdown-list-header">
+                                        <a ui-sref="mens" class="dropdown-link">Men's</a>
+                                    </span>
+                                    <ol>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'guys', style: 'tees'})"  class="dropdown-link">T-Shirts</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'guys', style: 'longSleeve'})"  class="dropdown-link">Raglans</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'guys', style: 'jersey'})"  class="dropdown-link">Tanks</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'guys', style: 'tees', color: 'multi'})" class="dropdown-link">Sublimation</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'guys', style: 'tees'})" class="dropdown-link">Tri-blends</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'guys', style: 'v-neck'})" class="dropdown-link">V-Neck</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'guys', style: 'longSleeve'})" class="dropdown-link">Long Sleeves</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'guys', style: 'hoodie'})" class="dropdown-link">Hoodies</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'guys', style: 'hoddie'})" class="dropdown-link">Sweatshirts</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog" class="dropdown-link ">
+                                                <span class="pink hover-blue">Clearance</span>
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="list">
+                                    <span class="dropdown-list-header">
+                                        <a ui-sref="women" class="dropdown-link">Women's</a>
+                                    </span>
+                                    <ol>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'gals', style: 'tees'})" class="dropdown-link">T-Shirts</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'gals', style: 'jersey'})" class="dropdown-link">Tanks</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'gals', style: 'tees', color: 'multi'})" class="dropdown-link">Sublimation</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'gals', style: 'tees'})" class="dropdown-link">Tri-Blends</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'gals', style: 'v-neck'})" class="dropdown-link">Deep V-Necks</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'gals', style: 'tees'})" class="dropdown-link">Scoop Necks</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'gals', style: 'dol'})" class="dropdown-link">Dolmans</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'gals', style: 'longSleeve'})" class="dropdown-link">Long Sleeves</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'gals', style: 'hoddie'})" class="dropdown-link">Hoodies</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog({type: 'gals', style: 'hoodie'})" class="dropdown-link">Sweatshirts</a>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            <a ui-sref="catalog" class="dropdown-link">
+                                                <span class="pink hover-blue">Clearance</span>
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="list">
+                                    <span class="dropdown-list-header">
+                                        Home
+                                    </span>
+                                    <ol>
+
+                                        <li class="dropdown-list">
+                                           Art Prints
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Tapestries
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Pillows
+                                        </li>
+                                        <li class="dropdown-list">
+                                          Duvet Covers
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Blankets
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Shower Curtains
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Rugs
+                                        </li>
+                                    </ol>
+                                    <br>
+                                    <span class="dropdown-list-header">
+                                        Kids
+                                    </span>
+                                    <ol>
+                                        <li class="dropdown-list">
+                                            T-Shirts
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Long Sleeves
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Hoodies
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="list">
+                                    <span class="dropdown-list-header">
+                                        Toddler
+                                    </span>
+                                    <ol>
+                                        <li class="dropdown-list">
+                                           T-Shirts
+                                        </li>
+                                        <li class="dropdown-list">
+                                           Long Sleeves
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Hoodies
+                                        </li>
+                                    </ol>
+                                    <br>
+                                    <span class="dropdown-list-header">
+                                        Babies
+                                    </span>
+                                    <ol>
+                                        <li class="dropdown-list">
+                                            T-Shirts
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Long Sleeves
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Bodysuits
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="list">
+                                    <span class="dropdown-list-header">
+                                        Accessories
+                                    </span>
+                                    <ol>
+                                        <li class="dropdown-list">
+                                           Phone Cases
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Mugs
+                                            <sup>NEW</sup>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Bags
+                                            <sup>NEW</sup>
+                                        </li>
+                                        <li class="dropdown-list">
+                                           Notebooks
+                                            <sup>NEW</sup>
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Hats and Beanies
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Beach Towels
+                                        </li>
+                                    </ol>
+                                    <br>
+                                    <span class="dropdown-list-header">
+                                        Collections
+                                    </span>
+                                    <ol>
+                                        <li class="dropdown-list">
+                                           Star Trek
+                                        </li>
+                                        <li class="dropdown-list">
+                                            Peanuts
+                                        </li>
+                                        <li class="dropdown-list">
+                                          Marvel
+                                        </li>
+                                    </ol>
+                                    <br>
+                                    <span class="dropdown-list-header">
+                                        Gift Cards
+                                    </span>
+                                </div>
+                               <li class="right-things">
+                                   <img src="https://cdn-media.threadless.com/navigation/TopSelling_Nav.jpg" alt="Top Selling"/>
+                                   <img src="https://cdn-media.threadless.com/navigation/LongSleeves_Nav.jpg" alt="Long SLeeves"/>
+                                   <img src="https://cdn-media.threadless.com/navigation/Beanies_Nav.jpg" alt="Beanies"/>
+                               </li>
+                               <li class="newsletter">
+                                   <div class="newsletter-text">
+                                       <em>
+                                           Join Our Newsletter
+                                       </em>
+                                       <p>
+                                           Get the skinny on new designs!
+                                       </p>
+                                   </div>
+                                   <div class="newsletter-form">
+                                       <form class="email-container">
+                                           <input class="email-field" type="text" name="email" placeholder="Your email address">
+                                       </form>
+                                       <input type="button" name="join" value="join" class="join-button">
+                                   </div>
+                               </li>
+                               <li class="nav_app_icons">
+                                   <img src="https://cdn-media.threadless.com/images/footer/typetees_app_icon.png" alt=""/>
+                                   <a href="#">Type Tees</a>
+                                   <img src="https://cdn-media.threadless.com/images/footer/threadless_app_icon.png" alt=""/>
+                                   <a href="#">Threadless</a>
+                               </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <span class="shop-section">PARTICIPATE</span>
+                        <ul class="dropdown-content particiapte">
+                            <div class="particiapte-col-one">
+                                Score Designs
+                                Read Our Blog
+                                <div class="sm-icons">
+                                    <div class="icons-row">
+                                        <img src="./images/facebook-circle.png" alt=""/>
+                                        <img src="./images/instagram-circle.png" alt=""/>
+                                        <img src="./images/twitter-circle.png" alt=""/>
+                                    </div>
+                                    <div class="icons-row">
+                                        <img src="./images/tumblr-circle.png" alt=""/>
+                                        <img src="./images/pintrest-circle.png" alt=""/>
+                                        <img src="./images/youtube-circle.png" alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="particiapte-col-two">
+                                <span class="dropdown-list-header">
+                                    <a ui-sref="catalog" class="dropdown-link">Forums</a>
+                                </span>
+                                <ol>
+                                    <li class="dropdown-list">
+                                        Everything
+                                    </li>
+                                    <li class="dropdown-list">
+                                        General
+                                    </li>
+                                    <li class="dropdown-list">
+                                       Art & Design
+                                    </li>
+                                    <li class="dropdown-list">
+                                       Tips & Tricks
+                                    </li>
+                                    <li class="dropdown-list">
+                                        Projects
+                                    </li>
+                                    <li class="dropdown-list">
+                                        Artist Shops
+                                    </li>
+                                </ol>
+                            </div>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="create-section">CREATE</span>
+                    <ul class="dropdown-content create">
+                        <ol class="padded create-bold">
+                            <li>Open an Artist Shop
+                                <sup class="pink">FREE</sup>
+                            </li>
+                            <li>• Features & Benefits</li>
+                            <li>• How Earnings Work</li>
+                            <li>• Creative Resources</li>
+                        </ol>
+                        <span class="dropdown-list bold bar">
+                                Submit Designs
+                                <span class="blue">How it works</span>
+                        </span>
+                        <ol class="padded">
+                            <li class="dropdown-list">
+                              Threadless:<span class="grayed">Weekly winners!</span>
+                            </li>
+                            <li class="dropdown-list">
+                                Critique:
+                                    <span class="grayed">Helpful feedback</span>
+                            </li>
+                            <li class="dropdown-list">
+                                Be Bold:
+                                    <span class="grayed">$1K + GC 2 days left</span>
+
+                            </li>
+                            <li class="dropdown-list">
+                                Artist Shops Challenge!:
+                                    <span class="grayed"><br>$500 GC 10 days left</span>
+
+                            </li>
+                            <li class="dropdown-list">
+                                Court of The Dead:
+                                    <span class="grayed"><br>$1K + prizes! 11 days left</span>
+
+                            </li>
+                            <li class="dropdown-list">
+                               Puns:
+                                    <span class="grayed">$1K + GC 11 days left</span>
+
+                            </li>
+                            <li class="dropdown-list">
+                               Marvel:
+                                    <span class="grayed">$2,000 61 days left</span>
+                            </li>
+                            <li class="dropdown-list">
+                                    <span class="blue">View All</span>
+                            </li>
+                        </ol>
+                </ul>
+            </li>
+               </ol>
+            </div>
+                <div class="right-navs">
+                   <form class="search">
+                        <input class="search-field" type="text" name="search" placeholder="search">
+                        <img class="search-img" src="./images/common-search.png" alt=""/>
+                    </form>
+                    <a ui-sref="cart"><img class="nav-icon" src="./images/grocery-cart-icon.png" alt=""/></a>
+                </div>
+             </div>
+        </div>
+      <div class="body">
+         <ui-view/>
+      </div>
+      <div class="footer">
+         <div class="footer-content">
+          <div class="footer-top">
+              <div class="footer-top-section">
+                  <span class="header">
+                      Join Our Newsletter
+                  </span>
+                  <p>
+                      Get the skinny on new designs, artists,<br>
+                      challenges, and more!
+                  </p>
+                  <div class="newsletter-form-footer">
+                      <form class="footer-email-container">
+                          <input class="email-field" type="text" name="email" placeholder="Your email address">
+                      </form>
+                      <input type="button" name="join" value="join" class="join-button">
+                  </div>
+              </div>
+              <div class="footer-top-section">
+
+              </div>
+              <div class="footer-top-section">
+
+              </div>
+          </div>
+          <div class="footer-middle bar-thick">
+              <div class="footer-shop">
+                  <div class="footer-shop-col">
+                      <a ui-sref="catalog">
+                          <span class="black bolder">
+                              <h2>SHOP</h2>
+                          </span>
+                      </a>
+                      <ol>
+                          <li>
+                              <a ui-sref="catalog">Men's</a>
+                          </li>
+                          <li>
+                              <a ui-sref="catalog">Home</a>
+                          </li>
+                          <li>
+                              <a ui-sref="catalog">Toddler</a>
+                          </li>
+                          <li>
+                              <a ui-sref="catalog">Accessories</a>
+                          </li>
+                          <li>
+                              <a ui-sref="catalog">Gift Cards</a>
+                          </li>
+                      </ol>
+                  </div>
+                  <div class="footer-shop-col">
+                      <br>
+                      <ol>
+                          <li>
+                              <a ui-sref="catalog">Women's</a>
+                          </li>
+                          <li>
+                              <a ui-sref="catalog">Kids</a>
+                          </li>
+                          <li>
+                              <a ui-sref="catalog">Babies</a>
+                          </li>
+                          <li>
+                              <a ui-sref="catalog">Collections</a>
+                          </li>
+                      </ol>
+                  </div>
+              </div>
+              <div class="footer-participate">
+                  <a ui-sref="catalog">
+                      <span class="black bolder">
+                          <h2>PARTCIPATE</h2>
+                      </span>
+                  </a>
+                  <ol>
+                      <li>
+                          <a ui-sref="catalog">Forums</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">Score Designs</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">Read our Blog</a>
+                      </li>
+                  </ol>
+              </div>
+              <div class="footer-participate">
+                  <a ui-sref="catalog">
+                      <span class="black bolder">
+                          <h2>CREATE</h2>
+                      </span>
+                  </a>
+                  <ol>
+                      <li>
+                          <a ui-sref="catalog">Open an Artist Shop</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">• Features & Benefits</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">• How Earnings Work</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">• Creative Resources</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">Submit a Design</a>
+                      </li>
+                      <hr>
+                      <li>
+                          <a ui-sref="catalog">Maker</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">Tattoodo</a>
+                      </li>
+                  </ol>
+              </div>
+              <div class="footer-participate">
+                  <a ui-sref="catalog">
+                      <span class="black bolder">
+                          <h2>INFO</h2>
+                      </span>
+                  </a>
+                  <ol>
+                      <li>
+                          <a ui-sref="catalog">About Us</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">Order Status</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">Help</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">Location</a>
+                      </li>
+                      <li>
+                          <a ui-sref="catalog">Careers</a>
+                      </li>
+                  </ol>
+              </div>
+              <div class="footer-participate">
+                  <span class="black bolder">
+                      <h2>IPHONE APPS</h2>
+                  </span>
+                  <div class="apps-container">
+                      <a ui-sref="catalog">
+                          <div class="footer-app-col">
+                              <img src="https://cdn-media.threadless.com/images/footer/threadless_app_icon.png" alt=""/>
+                              <p>
+                                  Threadless
+                              </p>
+                          </div>
+                      </a>
+                      <a ui-sref="catalog">
+                          <div class="footer-app-col">
+                              <img src="https://cdn-media.threadless.com/images/footer/typetees_app_icon.png" alt=""/>
+                              <p>
+                                  Type Tees
+                              </p>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div class="footer-bottom bar-thick">
+            <div class="footer-row">
+               <img src="./images/rss-feed.jpg" alt=""/>
+               <p>
+                  <a href="https://blog.threadless.com/feed/">Blog</a> / <a href="https://www.threadless.com/feeds/product_releases">Product Releases</a> / <a href="http://feeds.feedburner.com/threadless/submissions">Design Submissions</a>
+               </p>
+            </div>
+            <div class="footer-row">
+               <span class="tiny">
+                  © 2016, a <a href="#">skinnyCorp LLC</a> company. All designs copyright by owner. <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Return and Refund Policy</a>
+               </span>
+            </div>
+            </div>
+         </div>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+      <script src="
+https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.js"></script>
+      <script src='bundle.js'></script>
+</body>
+</html>
