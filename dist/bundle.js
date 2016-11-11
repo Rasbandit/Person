@@ -50,8 +50,6 @@ angular.module("myapp", ['ngAnimate', 'ui.router'])
    })
 }]);
 
-
-
 angular.module("myapp").controller('cartCtrl', ["$scope", function($scope) {
 
    $scope.test = "testing";
@@ -479,48 +477,73 @@ angular.module('myapp').directive('showProduct', function() {
    };
 })
 
+
+
 angular.module("myapp").controller('mainCtrl', ["$scope", "mainService", function($scope, mainService) {
+
+$scope.all = [];
+$scope.total = 0;
+$scope.subtotal = 0;
+$scope.totalPrice = 0;
+$scope.estimatedShipping = 11;
 
     $scope.allProducts = function() {
         mainService.getProducts().then(function(response) {
-
+           $scope.all = response;
         });
     };
 
-   $scope.all = $scope.allProducts();
+    $scope.allProducts();
+    $scope.cart = [];
 
-//id, size, gender, type, img, price
-   $scope.test = function () {
-      console.log("IM CATBUG!!");
+   $scope.test = function (id, obj, size) {
+      if (size === '') {
+
+      }
+      else {
+      var thing = false;
+      for (var i = 0; i < $scope.cart.length; i++) {
+         if($scope.cart[i].img === obj.img && $scope.cart[i].sized === size) {
+            $scope.cart[i].quantity++;
+            thing = true;
+            $scope.total++;
+            $scope.subtotal += obj.price;
+            }
+         }
+         if (thing === false) {
+            $scope.cart.push(
+               {
+                  img: obj.img,
+                  name: $scope.all[id].name,
+                  artist: $scope.all[id].artist,
+                  type: obj.type,
+                  sized: size,
+                  price: obj.price,
+                  quantity: 1
+               })
+               $scope.total++;
+               $scope.subtotal += obj.price;
+            }
+         }
    }
 
-   $scope.testData = [
-      {
-         id: '8',
-         size: 'small',
-         gender: 'male',
-         img: "https://cdn-images.threadless.com/threadless-shop/products/7859/1272x920design_01.jpg?w=1272&h=920",
-         price: 20,
-         name: "Cthulhu's Church"
-      },
-      {
-         id: 16,
-         size: 'small',
-         gender: 'female',
-         img:"https://cdn-images.threadless.com/threadless-shop/products/7859/1272x920design_01.jpg?w=1272&h=920",
-         price: 20,
-         name: "Cthulhu's Church"
-      },
-      {
-         id: 16,
-         size: 'small',
-         gender: 'male',
-         img: "https://cdn-images.threadless.com/threadless-shop/products/7859/1272x920design_01.jpg?w=1272&h=920",
-         price: 20,
-         name: "Cthulhu's Church"
-      }
-   ];
+   $scope.remove = function (obj) {
+      for (var i = 0; i < $scope.cart.length; i++) {
+         if($scope.cart[i].img === obj.img && $scope.cart[i].sized === obj.sized) {
+            $scope.total -= $scope.cart[i].quantity;
+            $scope.subtotal -= $scope.cart[i].quantity * $scope.cart[i].price;
+            $scope.cart.splice(i, 1);
+            }
+         }
+   }
 
+   $scope.updateQuantity = function (obj, count) {
+      for (var i = 0; i < $scope.cart.length; i++) {
+         if($scope.cart[i].img === obj.img && $scope.cart[i].sized === obj.sized) {
+            $scope.cart[i].quantity = count;
+            }
+         }
+   }
 }]);
 
 angular.module("myapp").service('mainService', ["$http", "$stateParams", function($http, $stateParams) {
@@ -541,38 +564,23 @@ angular.module("myapp").controller('mensCtrl', ["$scope", function($scope) {
    
 }]);
 
-angular.module("myapp").controller('splashCtrl', ["$scope", function($scope) {
-
-}]);
-
 angular.module('myapp').directive('cartModule', function() {
 
    return {
       restrict: 'E',
       templateUrl: '../../views/cartDir.html',
-      // scope: {
-      //    item: '='
-      // },
-      // controller: function($scope) {
-      //    $scope.size = '';
-      //    $scope.hidden = true;
-      //
-      //    $scope.toggle = function() {
-      //       if ($scope.item.show) {
-      //          $scope.item.show = false
-      //       }
-      //       else {
-      //          $scope.item.show = true;
-      //       }
-      //    }
-      //
-      //    $scope.showthing = function () {
-      //       $scope.hidden = false;
-      //    }
-      //    $scope.sizeSelected = function(select) {
-      //       $scope.size = select;
-      //    }
-      // }
+      scope: {
+         item: '=',
+         additem: '=',
+         d: '='
+      },
+      controller: ["$scope", "$stateParams", function($scope, $stateParams) {
+         $scope.size = '';
+
+         $scope.sizeSelected = function(select) {
+            $scope.size = select;
+         }
+      }]
    };
 })
 
@@ -630,6 +638,7 @@ angular.module("myapp").controller('productCtrl', ["$scope", "productService", "
    $scope.sizeSelected = function(select) {
       $scope.size = select;
    }
+
 
 }]);
 
@@ -802,4 +811,8 @@ angular.module("myapp").service('productService', ["$http", function($http) {
 angular.module("myapp").controller('shopCtrl', ["$scope", function($scope) {
 
    $scope.test = "shop controller works";
+}]);
+
+angular.module("myapp").controller('splashCtrl', ["$scope", function($scope) {
+
 }]);

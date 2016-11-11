@@ -1,0 +1,10 @@
+<div class="product-dir">
+<a ui-sref="product({id: item.id, gender: item.gender })">
+   <img class="product-picture" src="{{item.img}}" alt="item.name" />
+</a>
+   <div class="catalog-product-text">
+      <h2><a ui-sref="product({id: item.shirt_id})">{{item.name}}</a></h2>
+      <h2>Design by: {{item.artist}}</h2>
+      <h2 class="pink">{{item.price | currency}}</h2>
+   </div>
+</div>

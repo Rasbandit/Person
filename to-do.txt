@@ -1,8 +1,0 @@
-To do list
-set up state params in the url
-create database
-create node server
-
-
-shoping cart
-logging in

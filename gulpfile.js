@@ -6,7 +6,8 @@ var annotate = require("gulp-ng-annotate");
 var paths = {
    jsSource: ["./public/js/**/*.js"],
    sassSource: ["./public/css/**/*.scss"],
-   indexSource: ["./public/index.html"]
+   indexSource: ["./public/index.html"],
+   viewsSource: ["./public/views/**/*.html"]
 };
 
 gulp.task('js', function() {
@@ -17,6 +18,10 @@ gulp.task('sass', function() {
    gulp.src(paths.sassSource).pipe(sass()).pipe(concat("bundle.css")).pipe(gulp.dest("./dist"));
 });
 
+gulp.task('views', function() {
+   gulp.src(paths.viewsSource).pipe(gulp.dest("./dist/views"));
+})
+
 gulp.task('index', function() {
    gulp.src(paths.indexSource).pipe(gulp.dest("./dist"));
 });
@@ -25,6 +30,7 @@ gulp.task('watch', function() {
    gulp.watch(paths.jsSource, ['js']);
    gulp.watch(paths.sassSource, ['sass']);
    gulp.watch(paths.indexSource, ['index']);
+   gulp.watch(paths.viewsSource, ['views']);
 });
 
-gulp.task('default', ['js', 'sass', 'index', 'watch'])
+gulp.task('default', ['js', 'sass', 'index', 'views', 'watch'])

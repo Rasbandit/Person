@@ -18,6 +18,9 @@
                         <li class="dropdown">
                             <a class="shop-section" ui-sref="shop">SHOP</a>
                             <ul class="dropdown-content shop">
+                               <div class="space-between-dp">
+                               <div class="flexer">
+
                                 <div class="list">
                                     <span class="dropdown-list-header">
                                         <a ui-sref="mens" class="dropdown-link">Men's</a>
@@ -221,11 +224,13 @@
                                         Gift Cards
                                     </span>
                                 </div>
+                             </div>
                                <li class="right-things">
                                    <img src="https://cdn-media.threadless.com/navigation/TopSelling_Nav.jpg" alt="Top Selling"/>
                                    <img src="https://cdn-media.threadless.com/navigation/LongSleeves_Nav.jpg" alt="Long SLeeves"/>
                                    <img src="https://cdn-media.threadless.com/navigation/Beanies_Nav.jpg" alt="Beanies"/>
                                </li>
+                            </div>
                                <li class="newsletter">
                                    <div class="newsletter-text">
                                        <em>
@@ -251,8 +256,9 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <span class="shop-section">PARTICIPATE</span>
+                        <span class="shop-section" >PARTICIPATE</span>
                         <ul class="dropdown-content particiapte">
+                           <div class="flexer">
                             <div class="particiapte-col-one">
                                 Score Designs
                                 Read Our Blog
@@ -294,6 +300,7 @@
                                     </li>
                                 </ol>
                             </div>
+                         </div>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -356,7 +363,9 @@
                         <input class="search-field" type="text" name="search" placeholder="search">
                         <img class="search-img" src="./images/common-search.png" alt=""/>
                     </form>
-                    <a ui-sref="cart"><img class="nav-icon" src="./images/grocery-cart-icon.png" alt=""/></a>
+                    <a ui-sref="cart"><img class="nav-icon" src="./images/grocery-cart-icon.png" alt=""/><div class="total" ng-class="{'hidden': total <= 0}">
+                        {{total}}
+                    </div></a>
                 </div>
              </div>
         </div>

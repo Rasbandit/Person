@@ -1,0 +1,57 @@
+<img src="https://cdn-images.threadless.com/threadless-media/navigation/sitewide8.jpg?q=85" alt="Free Shipping" class="promo-banner" />
+
+<div class="catalog-header">
+   <div class="catalog-header-other">
+   <h1><a ui-sref="catalog({type: 'guys', view: '24', order: 'popular', style: 'tees', display: 'hero', page: '1', color: ''})">shop</a></h1>
+   <h2>by <a class="pink" href="#">popularity</a> / <a href="#">newest</a></h2>
+   </div>
+   <h3>Display: <a ui-sref="catalog({display: 'hero'})"><img src="../images/profile-pink.png" alt="" /></a><a ui-sref="catalog({display: 'art'})"><img src="../images/art.png" alt="" /></a></h3>
+</div>
+
+<div class="body-catalog">
+
+<div class="side-bar">
+      <section class="side-bar-section bar-side-bar">
+         <h2>Department</h2>
+         <ol>
+            <li><a ui-sref="catalog({type: 'guys'})">Men's</a></li>
+            <li><a ui-sref="catalog({type: 'gals'})">Women's</a></li>
+         </ol>
+      </section>
+      <section class="side-bar-section bar-side-bar">
+         <h2>Style</h2>
+         <ol>
+            <li><a ui-sref="catalog({style: 'tees'})">Tees</a></li>
+            <li><a ui-sref="catalog({style: 'v-neck'})">V-Necks</a></li>
+            <li><a ui-sref="catalog({style: 'longSleeve'})">Longsleeves</a></li>
+            <li><a ui-sref="catalog({style: 'hoddie'})">Hoodies</a></li>
+            <li><a ui-sref="catalog({style: 'jersey'})">Tanks</a></li>
+         </ol>
+      </section>
+
+      <section class="side-bar-section bar-side-bar">
+         <h2>Price</h2>
+         <ol class="flexed boxed">
+            <li><a ui-sref="catalog({color: 'black'})"><div class="blacks"></div></a></li>
+            <li><a ui-sref="catalog({color: 'gray'})"><div class="grays"></div></a></li>
+            <li><a ui-sref="catalog({color: 'creme'})"><div class="cremes"></div></a></li>
+            <li><a ui-sref="catalog({color: 'white'})"><div class="whites"></div></a></li>
+            <li><a ui-sref="catalog({color: 'blue'})"><div class="blues"></div></a></li>
+            <li><a ui-sref="catalog({color: 'purple'})"><div class="purples"></div></a></li>
+            <li><a ui-sref="catalog({color: 'red'})"><div class="reds"></div></a></li>
+            <li><a ui-sref="catalog({color: 'green'})"><div class="greens"></div></a></li>
+            <li><a ui-sref="catalog({color: 'brown'})"><div class="browns"></div></a></li>
+            <li><a ui-sref="catalog({color: 'orange'})"><div class="oranges"></div></a></li>
+            <li><a ui-sref="catalog({color: 'yellow'})"><div class="yellows"></div></a></li>
+            <li><a ui-sref="catalog({color: 'multi'})"><div class="multicolors"></div></a></li>
+         </ol>
+      </section>
+</div>
+
+<div class="products">
+   <div ng-repeat="product in products">
+      <show-product item=product></show-product>
+   </div>
+</div>
+
+</div>

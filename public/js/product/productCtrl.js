@@ -53,4 +53,5 @@ angular.module("myapp").controller('productCtrl', function($scope, productServic
       $scope.size = select;
    }
 
+
 });
