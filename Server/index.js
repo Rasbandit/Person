@@ -5,7 +5,7 @@ var session = require('express-session');
 var productCtrl = require('./controllers/productCtrl');
 var cors = require('cors');
 var massive = require('massive');
-var port = 8000;
+var port = 80;
 
 var app = module.exports = express();
 
