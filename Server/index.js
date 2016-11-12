@@ -3,7 +3,6 @@ var express = require("express");
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var productCtrl = require('./controllers/productCtrl');
-var keys = require('./secretkeys.js');
 var cors = require('cors');
 var massive = require('massive');
 var port = 3000;
@@ -11,7 +10,7 @@ var port = 3000;
 var app = module.exports = express();
 
 var massiveServer = massive.connectSync({
-   connectionString: "postgres://postgres:"+ keys.serverSecret +"@localhost/Threadless"
+   connectionString: "postgres://blibwsje:TmmwRZFhbEaCXB_elJFfMUWOD2zR0iYI@elmer.db.elephantsql.com:5432/blibwsje"
 });
 
 
