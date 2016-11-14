@@ -477,6 +477,11 @@ angular.module('myapp').directive('showProduct', function() {
    };
 })
 
+angular.module("myapp").controller('mensCtrl', ["$scope", function($scope) {
+
+   
+}]);
+
 
 
 angular.module("myapp").controller('mainCtrl', ["$scope", "mainService", function($scope, mainService) {
@@ -559,9 +564,9 @@ angular.module("myapp").service('mainService', ["$http", "$stateParams", functio
 
 }]);
 
-angular.module("myapp").controller('mensCtrl', ["$scope", function($scope) {
+angular.module("myapp").controller('shopCtrl', ["$scope", function($scope) {
 
-   
+   $scope.test = "shop controller works";
 }]);
 
 angular.module('myapp').directive('cartModule', function() {
@@ -806,11 +811,6 @@ angular.module("myapp").service('productService', ["$http", function($http) {
 
 
 
-}]);
-
-angular.module("myapp").controller('shopCtrl', ["$scope", function($scope) {
-
-   $scope.test = "shop controller works";
 }]);
 
 angular.module("myapp").controller('splashCtrl', ["$scope", function($scope) {
