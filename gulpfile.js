@@ -2,16 +2,20 @@ var gulp = require("gulp");
 var sass = require("gulp-sass");
 var concat = require("gulp-concat");
 var annotate = require("gulp-ng-annotate");
+var image = require('gulp-image');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename'); 
 
 var paths = {
    jsSource: ["./public/js/**/*.js"],
    sassSource: ["./public/css/**/*.scss"],
    indexSource: ["./public/index.html"],
-   viewsSource: ["./public/views/**/*.html"]
+   viewsSource: ["./public/views/**/*.html"],
+   imgSource: ["./public/images/*"]
 };
 
 gulp.task('js', function() {
-   gulp.src(paths.jsSource).pipe(annotate()).pipe(concat("bundle.js")).pipe(gulp.dest("./dist"));
+   gulp.src(paths.jsSource).pipe(annotate()).pipe(concat("bundle.js")).pipe(uglify()).pipe(rename({extname: ".min.js"})).pipe(gulp.dest("./dist"));
 });
 
 gulp.task('sass', function() {

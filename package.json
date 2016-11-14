@@ -11,8 +11,13 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
+    "gulp-image": "^2.7.2",
+    "gulp-livereload": "^3.8.1",
     "gulp-ng-annotate": "^2.0.0",
-    "gulp-sass": "^2.3.2"
+    "gulp-ngmin": "^0.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
