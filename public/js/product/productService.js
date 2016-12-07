@@ -34,10 +34,10 @@ angular.module("myapp").service('productService', function($http) {
                         show: false
                      });
       }
-      if (allProducts[id].men_j_ !== null) {
+      if (allProducts[id].men_j !== null) {
          men_images.push(
                      {
-                        img: allProducts[id].men_j_,
+                        img: allProducts[id].men_j,
                         price: allProducts[id].men_j_price,
                         type: "mens tank",
                         show: false

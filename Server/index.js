@@ -5,6 +5,8 @@ var session = require('express-session');
 var productCtrl = require('./controllers/productCtrl');
 var cors = require('cors');
 var massive = require('massive');
+var stripeKey = require('./stripeSecretKeys');
+var stripe = require('stripe')(stripeKey.secretKey);
 var port = 80;
 
 var app = module.exports = express();
@@ -26,6 +28,8 @@ app.get("/api/products", function(req,res) {
       console.log("request made");
    });
 });
+
+app.post('/api/payment', productCtrl.processPayment);
 
 
 app.listen(port, function(){

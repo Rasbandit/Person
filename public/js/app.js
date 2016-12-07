@@ -1,5 +1,7 @@
-angular.module("myapp", ['ngAnimate', 'ui.router'])
-.config(function($stateProvider, $urlRouterProvider) {
+angular.module("myapp", ['ngAnimate', 'ui.router', 'angular-stripe'])
+.config(function($stateProvider, $urlRouterProvider, stripeProvider) {
+
+   stripeProvider.setPublishableKey('pk_test_4dSzkXUjuiBK1bYeOumvIjeP');
 
    $urlRouterProvider.otherwise('/');
 
@@ -47,5 +49,10 @@ angular.module("myapp", ['ngAnimate', 'ui.router'])
       templateUrl: '../views/cart.html',
       controller: 'cartCtrl',
       url: '/cart'
+   })
+   .state('checkout', {
+      templateUrl: '../views/checkout.html',
+      controller: 'checkoutCtrl',
+      url: '/checkout'
    })
 });

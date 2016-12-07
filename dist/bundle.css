@@ -346,6 +346,205 @@
 .catalog-product-text a:hover {
   text-decoration: underline; }
 
+@font-face {
+  font-family: 'proxima-nova-rg';
+  src: url("./fonts/proximanova-regular-webfont.woff") format("woff"), url("./fonts/proximanova-regular-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'proxima-nova-light';
+  src: url("./fonts/proximanova-light-webfont.woff") format("woff"), url("./fonts/proximanova-light-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'proxima-nova-medium';
+  src: url("./fonts/proximanova-medium-webfont.woff") format("woff"), url("./fonts/proximanova-medium-webfont.woff2") format("woff2"); }
+
+.checkout {
+  max-width: 1200px;
+  width: 1200px;
+  margin: auto;
+  margin-left: -150px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; }
+  .checkout .column {
+    width: 30%;
+    height: auto;
+    flex-wrap: wrap;
+    position: relative; }
+    .checkout .column .blocker {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: 3;
+      background: rgba(255, 255, 255, 0.5); }
+    .checkout .column .hide {
+      display: none; }
+    .checkout .column .show {
+      display: block; }
+    .checkout .column .col-heading {
+      color: #999;
+      border-bottom: 15px #666 solid;
+      width: 100%;
+      text-align: center;
+      font-family: "proxima-nova-medium", "Tahoma", "Helvetica", sans-serif;
+      font-size: 18px;
+      margin-top: 20px; }
+    .checkout .column .no-bg {
+      background: white; }
+    .checkout .column form {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      background: #e7e7e7;
+      width: 100%;
+      margin-bottom: 20px; }
+      .checkout .column form .top-mar {
+        margin-top: 20px; }
+      .checkout .column form .bot-bar {
+        border-bottom: 1px gray solid;
+        padding-bottom: 15px; }
+      .checkout .column form .marg-top {
+        margin-top: 16px; }
+      .checkout .column form .row {
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 15px; }
+        .checkout .column form .row img {
+          margin-top: 20px;
+          width: auto;
+          height: 27px; }
+        .checkout .column form .row h2 {
+          font-family: "proxima-nova-medium", "Tahoma", "Helvetica", sans-serif;
+          font-size: 15px;
+          font-weight: bold;
+          margin-left: 3px;
+          margin-bottom: 6px; }
+        .checkout .column form .row p {
+          font-family: "proxima-nova-medium", "Tahoma", "Helvetica", sans-serif;
+          font-size: 14px;
+          margin-left: 3px;
+          margin-bottom: 6px; }
+        .checkout .column form .row input {
+          line-height: 30px;
+          font-size: 14px;
+          color: #666;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          height: 30px;
+          border: 1px solid #CCCCCC;
+          width: 100%;
+          text-indent: 7px;
+          border-radius: 3px; }
+        .checkout .column form .row .right-special {
+          width: 83%; }
+          .checkout .column form .row .right-special span {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%; }
+            .checkout .column form .row .right-special span .special-header {
+              font-family: "proxima-nova-medium", "Tahoma", "Helvetica", sans-serif;
+              font-size: 15px;
+              font-weight: bold;
+              margin-left: 4px; }
+            .checkout .column form .row .right-special span h3 {
+              font-family: "Open Sans", "Tahoma", "Helvetica", sans-serif;
+              font-style: italic;
+              font-size: 12px; }
+          .checkout .column form .row .right-special select {
+            margin-top: -2px;
+            margin-left: 5px;
+            width: 100%;
+            height: 30px;
+            border: 1px solid #CCCCCC;
+            border-radius: 3px;
+            color: #666; }
+        .checkout .column form .row .half {
+          width: 50%; }
+          .checkout .column form .row .half input {
+            width: 95%; }
+          .checkout .column form .row .half .no-label {
+            margin-top: 21px; }
+          .checkout .column form .row .half select {
+            width: 100%;
+            height: 30px;
+            border: 1px solid #CCCCCC;
+            border-radius: 3px;
+            color: #666; }
+          .checkout .column form .row .half .smaller {
+            width: 95%; }
+        .checkout .column form .row .checkbox {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: none repeat scroll 0 0 #d4d4d4;
+          border: 1px solid #999999;
+          border-radius: 2px;
+          display: inline-block;
+          float: left;
+          font-size: 20px;
+          text-align: center;
+          position: relative;
+          vertical-align: middle;
+          margin-right: 10px;
+          margin-top: -5px;
+          cursor: pointer;
+          font: white;
+          user-select: none; }
+        .checkout .column form .row .checked {
+          background: #009FDF;
+          border: 1px solid #009FDF;
+          user-select: none; }
+        .checkout .column form .row .checked::after {
+          margin-top: 4px;
+          content: "\002714";
+          user-select: none;
+          font: white; }
+      .checkout .column form .button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 38px;
+        background: #009fdf;
+        padding: 1px 5px;
+        color: white;
+        border-radius: 3px;
+        border: none; }
+        .checkout .column form .button h2 {
+          font-family: "proxima-nova-medium", "Tahoma", "Helvetica", sans-serif;
+          font-size: 18px;
+          margin-left: 10px;
+          margin-bottom: 0;
+          text-transform: uppercase; }
+        .checkout .column form .button h3 {
+          font-family: "Open Sans", "Tahoma", "Helvetica", sans-serif;
+          font-size: 16px;
+          margin-right: 10px; }
+      .checkout .column form .front {
+        justify-content: center;
+        z-index: 4; }
+      .checkout .column form .show {
+        display: block; }
+      .checkout .column form .hide {
+        display: none; }
+      .checkout .column form .button:hover {
+        cursor: pointer; }
+      .checkout .column form .dcenter {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; }
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:700,800");
 @import url("https://fonts.googleapis.com/css?family=Slabo+27px");
@@ -454,7 +653,7 @@ input[type=text]:focus {
   background-color: white;
   border: 1px solid #dadada;
   border-radius: 2px;
-  z-index: 1; }
+  z-index: 11; }
 
 .flexer {
   display: flex;

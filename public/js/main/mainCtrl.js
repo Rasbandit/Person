@@ -1,4 +1,4 @@
-angular.module("myapp").controller('mainCtrl', function($scope, mainService) {
+angular.module("myapp").controller('mainCtrl', function($scope, $stateParams, mainService) {
 
 $scope.all = [];
 $scope.total = 0;
@@ -26,7 +26,7 @@ $scope.estimatedShipping = 11;
             $scope.cart[i].quantity++;
             thing = true;
             $scope.total++;
-            $scope.subtotal += obj.price;
+            $scope.subtotal = parseFloat($scope.subtotal) + parseFloat(obj.price);
             }
          }
          if (thing === false) {
@@ -41,7 +41,7 @@ $scope.estimatedShipping = 11;
                   quantity: 1
                })
                $scope.total++;
-               $scope.subtotal += obj.price;
+               $scope.subtotal = parseFloat($scope.subtotal) + parseFloat(obj.price);
             }
          }
    }
@@ -56,11 +56,10 @@ $scope.estimatedShipping = 11;
          }
    }
 
-   $scope.updateQuantity = function (obj, count) {
+   $scope.updateQuantity = function () {
+      $scope.subtotal = 0;
       for (var i = 0; i < $scope.cart.length; i++) {
-         if($scope.cart[i].img === obj.img && $scope.cart[i].sized === obj.sized) {
-            $scope.cart[i].quantity = count;
-            }
-         }
+         $scope.subtotal += parseFloat($scope.cart[i].quantity) * parseFloat($scope.cart[i].price);
+      }
    }
 });

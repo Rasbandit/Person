@@ -5,6 +5,7 @@
         <title>Clone</title>
         <link rel="stylesheet" href="bundle.css" media="screen" title="no title">
         <link rel="shortcut icon" href="http://www.iconarchive.com/download/i65337/custom-icon-design/pretty-office-10/Pencil.ico"/>
+              <link rel="stylesheet" type="text/css" href="./sweetalert-master/dist/sweetalert.css">
     </head>
     <body ng-controller="mainCtrl">
 
@@ -359,19 +360,21 @@
                </ol>
             </div>
                 <div class="right-navs">
-                   <form class="search">
-                        <input class="search-field" type="text" name="search" placeholder="search">
+                  <a ui-sref="catalog"><form class="search">
+                        <input class="search-field" type="text" name="search" placeholder="search" ng-model="searchText">
                         <img class="search-img" src="./images/common-search.png" alt=""/>
-                    </form>
+                    </form></a>
                     <a ui-sref="cart"><img class="nav-icon" src="./images/grocery-cart-icon.png" alt=""/><div class="total" ng-class="{'hidden': total <= 0}">
                         {{total}}
                     </div></a>
                 </div>
              </div>
         </div>
+
       <div class="body">
          <ui-view/>
       </div>
+
       <div class="footer">
          <div class="footer-content">
           <div class="footer-top">
@@ -559,5 +562,9 @@
       <script src="
 https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.js"></script>
       <script src='bundle.min.js'></script>
+      <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-stripe/4.2.12/angular-stripe.js"></script>
+      <script src="./sweetalert-master/dist/sweetalert.min.js"></script>
+      <script src="./bundle.js"></script>
 </body>
 </html>

@@ -15,9 +15,9 @@
 <div class="itemsInCart" ng-repeat="item in cart">
    <div class="box-one-prod"><img src="{{item.img}}" alt="" /></div>
    <div class="box-two-prod"><h2 class='blue'>{{item.name}}</h2><h3>by {{item.artist}}</h3><h4 ng-click="remove(item)">remove</h4></div>
-   <div class="box-three-prod">{{item.type}} {{item.size}}</div>
+   <div class="box-three-prod"> {{item.sized}} {{item.type}}</div>
    <div class="box-four-prod">{{item.price | currency}}</div>
-   <div class="box-five-prod-1"><input type="field" name="name" value="{{item.quantity}}" class="small-field"> <h4 ng-click="updateQuantity(item, item.quantity)">update</h4></div>
+   <div class="box-five-prod-1"><input type="field" name="name" ng-model="item.quantity" ng-leav value="{{item.quantity}}" class="small-field" ng-blur="updateQuantity(item, item.quantity)"></div>
    <div class="box-five-prod-2">$<input type="field" name="name" value="0.00" class="small-field"></div>
    <div class="box-six-prod">{{item.price * item.quantity | currency}}</div>
 </div>

@@ -115,7 +115,7 @@ angular.module("myapp").service('catalogService', function($http, $stateParams) 
       else if ($stateParams.style === "jersey") {
          if ($stateParams.display === "art") {
             for (var i = 0; i < allProducts.length; i++) {
-               if (allProducts[i].men_j_ != null) {
+               if (allProducts[i].men_j != null) {
                   products.push(
                      {
                         gender: "male",
@@ -131,12 +131,12 @@ angular.module("myapp").service('catalogService', function($http, $stateParams) 
          }
          else {
             for (var i = 0; i < allProducts.length; i++) {
-               if (allProducts[i].men_j_ != null) {
+               if (allProducts[i].men_j != null) {
                   products.push(
                      {
                         gender: "male",
                         id: allProducts[i].shirt_id,
-                        img: allProducts[i].men_j_,
+                        img: allProducts[i].men_j,
                         price: allProducts[i].men_j_price,
                         name: allProducts[i].name,
                         artist: allProducts[i].artist,
