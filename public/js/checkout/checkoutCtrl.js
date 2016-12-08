@@ -66,7 +66,8 @@ $scope.charge = function () {
      text: "Your order will be shipped within 3 business days.",
      imageUrl: "http://www.idealaunch.com/blog/wp-content/uploads/2009/09/Threadless_logo.png",
      confirmButtonText: "Continue shopping Threadless"
-    })
+   });
+   $scope.setZero();
     $state.go('home');
  })
  .catch(function (err) {

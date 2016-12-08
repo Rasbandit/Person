@@ -12,6 +12,13 @@ $scope.estimatedShipping = 11;
         });
     };
 
+    $scope.setZero = function () {
+        $scope.total = 0;
+        $scope.subtotal = 0;
+        $scope.totalPrice = 0;
+        $scope.cart = [];
+   }
+
     $scope.allProducts();
     $scope.cart = [];
 
