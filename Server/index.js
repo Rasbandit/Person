@@ -29,7 +29,7 @@ app.get("/api/products", function(req,res) {
    });
 });
 
-app.post('/api/payment', productCtrl.processPayment);
+app.post("/api/payment", productCtrl.processPayment);
 
 
 app.listen(port, function(){

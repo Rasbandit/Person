@@ -68,7 +68,7 @@ $scope.charge = function () {
      confirmButtonText: "Continue shopping Threadless"
    });
    $scope.setZero();
-    $state.go('home');
+   $state.go('home');
  })
  .catch(function (err) {
      if (err.type && /^Stripe/.test(err.type)) {
