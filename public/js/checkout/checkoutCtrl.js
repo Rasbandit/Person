@@ -56,7 +56,7 @@ $scope.charge = function () {
     var payment = angular.copy($scope.payment);
     payment.card = void 0;
     payment.token = response.id;
-    var endTotal = $scope.subtotal + $scope.estimatedShipping;
+    var endTotal = parseInt($scope.subtotal) + parseInt($scope.estimatedShipping);
     endTotal *= 100;
     checkoutService.processPayment(endTotal, payment);
  })
